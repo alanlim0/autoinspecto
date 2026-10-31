@@ -1,0 +1,6 @@
+{
+  "name": "AutoInspect: Autonomous Vehicle Return Agent",
+  "description": "Production autonomous multi-agent pipeline for vehicle returns wiring Roboflow CV, Neo4j BOM graph, Nosana decentralized GPU batch compute, and Daytona ephemeral sandboxes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
