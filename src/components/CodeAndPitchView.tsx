@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Copy, Check, Download, Terminal, Sparkles, Shield, Cpu, Network, Camera, Layers } from 'lucide-react';
+import { Copy, Check, Download, Terminal, Sparkles, Shield, Cpu, Network, Camera } from 'lucide-react';
 import { PYTHON_SCRIPT_CONTENT } from '../data/mockVehicles';
 
 export const CodeAndPitchView: React.FC = () => {
@@ -23,108 +23,106 @@ export const CodeAndPitchView: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Hackathon Judge Pitch Card */}
-      <div className="p-6 bg-gradient-to-br from-neutral-900 to-neutral-950 border border-neutral-800 rounded-lg space-y-4">
-        <div className="flex items-center gap-2 text-xs font-semibold text-cyan-400">
-          <Sparkles className="w-4 h-4" />
-          <span className="uppercase tracking-wider">3-Sentence Hackathon Judge Pitch</span>
+      {/* Hackathon Judge Pitch Card - Dub.co / Cal.com Style */}
+      <div className="p-6 sm:p-8 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-sm space-y-5">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-zinc-900 dark:bg-zinc-100" />
+          <span className="text-xs font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
+            Hackathon Judge Pitch (3 Sentences)
+          </span>
         </div>
 
-        <blockquote className="text-base sm:text-lg font-medium text-neutral-100 leading-relaxed border-l-2 border-cyan-400 pl-4 py-1">
+        <blockquote className="text-lg sm:text-xl font-medium text-zinc-900 dark:text-zinc-100 leading-relaxed border-l-3 border-zinc-900 dark:border-zinc-100 pl-5 py-1">
           "AutoInspect transforms the multi-billion-dollar fleet and rental return bottleneck from a 45-minute manual check into a sub-second autonomous transaction. By uniting Roboflow computer vision with Neo4j vehicle knowledge graphs, decentralized Nosana GPU clusters for heavy 3D volumetric analysis at 95% lower cost, and ephemeral Daytona code execution sandboxes, we eliminate human inspection error while safeguarding customer privacy and backend infrastructure. This delivers a production-grade multi-agent loop that autonomously spots damage, resolves certified OEM parts, verifies structural safety, and issues binding purchase orders without human intervention."
         </blockquote>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-3">
-          <div className="p-3 bg-neutral-950/70 border border-neutral-850 rounded">
-            <div className="text-[11px] font-mono text-cyan-400 flex items-center gap-1.5">
-              <Camera className="w-3.5 h-3.5" />
-              <span>Roboflow (The Eyes)</span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+          <div className="p-4 bg-zinc-50 dark:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 rounded-lg">
+            <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+              <Camera className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
+              <span>1. Roboflow (The Eyes)</span>
             </div>
-            <p className="text-xs text-neutral-400 mt-1">
-              Millisecond optical defect localization and confidence scoring right at the check-in gate.
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1.5 leading-relaxed">
+              Detects scratches, dents, and tire wear at check-in bay cameras within 42ms.
             </p>
           </div>
 
-          <div className="p-3 bg-neutral-950/70 border border-neutral-850 rounded">
-            <div className="text-[11px] font-mono text-amber-400 flex items-center gap-1.5">
-              <Network className="w-3.5 h-3.5" />
-              <span>Neo4j (The Brain)</span>
+          <div className="p-4 bg-zinc-50 dark:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 rounded-lg">
+            <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+              <Network className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
+              <span>2. Neo4j (The Brain)</span>
             </div>
-            <p className="text-xs text-neutral-400 mt-1">
-              Traverses complex OEM Bill of Materials (BOM) to link surface defects to exact SKUs and labor hours.
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1.5 leading-relaxed">
+              Traverses vehicle Bill of Materials (BOM) to link defects to exact OEM parts and labor.
             </p>
           </div>
 
-          <div className="p-3 bg-neutral-950/70 border border-neutral-850 rounded">
-            <div className="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5">
-              <Cpu className="w-3.5 h-3.5" />
-              <span>Nosana (The Muscle)</span>
+          <div className="p-4 bg-zinc-50 dark:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 rounded-lg">
+            <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+              <Cpu className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
+              <span>3. Nosana (The Muscle)</span>
             </div>
-            <p className="text-xs text-neutral-400 mt-1">
-              Offloads heavy 3D point-cloud and volumetric depth modeling to decentralized GPU grids for fractions of a cent.
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1.5 leading-relaxed">
+              Decentralized GPU marketplace computes 3D volumetric depth analysis at 95% lower cost than AWS.
             </p>
           </div>
 
-          <div className="p-3 bg-neutral-950/70 border border-neutral-850 rounded">
-            <div className="text-[11px] font-mono text-purple-400 flex items-center gap-1.5">
-              <Shield className="w-3.5 h-3.5" />
-              <span>Daytona (The Hands & Shield)</span>
+          <div className="p-4 bg-zinc-50 dark:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 rounded-lg">
+            <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+              <Shield className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
+              <span>4. Daytona (The Shield)</span>
             </div>
-            <p className="text-xs text-neutral-400 mt-1">
-              Spins up isolated, ephemeral execution sandboxes to run dynamic remediation scripts, destroying containers after PO dispatch.
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1.5 leading-relaxed">
+              Spins up isolated execution sandboxes to generate purchase orders, then safely destroys them.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Code Viewer Card */}
-      <div className="bg-neutral-900/70 border border-neutral-800 rounded-lg p-5 space-y-4">
-        <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-neutral-800/80">
+      {/* Code Inspector Card */}
+      <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-sm p-6 sm:p-8 space-y-5">
+        <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-zinc-200 dark:border-zinc-800">
           <div>
-            <div className="flex items-center gap-2 text-xs text-neutral-400 font-mono">
-              <span>car_return_agent.py</span>
-              <span aria-hidden="true">·</span>
-              <span>Self-Contained Python Script</span>
-              <span aria-hidden="true">·</span>
-              <span>Official SDKs + Resilient Mock Fallbacks</span>
-            </div>
-            <h2 className="text-base font-semibold text-neutral-100 mt-1">
-              Production Codebase Inspector
+            <span className="text-xs font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
+              Complete Python Implementation
+            </span>
+            <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mt-0.5">
+              car_return_agent.py
             </h2>
+            <p className="text-xs text-zinc-500 mt-1">
+              Self-contained script ready to run locally, on GitHub, or in production.
+            </p>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             <button
               onClick={copyScript}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono bg-neutral-950 border border-neutral-800 rounded text-neutral-300 hover:text-neutral-100 transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors shadow-sm"
             >
-              {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-neutral-400" />}
-              <span>{copied ? 'Copied Code' : 'Copy Script'}</span>
+              {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+              <span>{copied ? 'Copied' : 'Copy Code'}</span>
             </button>
             <button
               onClick={downloadScript}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono bg-cyan-500 hover:bg-cyan-400 text-neutral-950 font-semibold rounded transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-950 transition-colors shadow-sm"
             >
               <Download className="w-3.5 h-3.5" />
-              <span>Download car_return_agent.py</span>
+              <span>Download .py</span>
             </button>
           </div>
         </div>
 
-        {/* CLI Execution Guide */}
-        <div className="p-3 bg-neutral-950 rounded border border-neutral-800 text-xs font-mono space-y-2">
-          <div className="text-neutral-400"># Direct Execution Instructions:</div>
-          <div className="text-cyan-300">
-            $ python3 car_return_agent.py --vin SG-BUS-8821X --defect deep-scratch --confidence 0.94
-          </div>
-          <div className="text-neutral-400 text-[11px]">
-            # Compatible with Python 3.10+. Fully executes with zero setup using resilient mock modes, or connects to live Neo4j, Nosana API, and Daytona credentials when defined in environment variables.
+        {/* CLI Quickstart Command */}
+        <div className="p-4 bg-zinc-100 dark:bg-zinc-950 rounded-lg border border-zinc-200 dark:border-zinc-800 font-mono text-xs space-y-1.5">
+          <div className="text-zinc-500"># Direct execution command:</div>
+          <div className="text-zinc-900 dark:text-zinc-100 font-semibold select-all">
+            python3 car_return_agent.py --vin SG-BUS-8821X --defect deep-scratch --confidence 0.94 --json
           </div>
         </div>
 
-        {/* Code Content */}
-        <div className="bg-neutral-950 rounded-lg border border-neutral-800 p-4 font-mono text-xs overflow-x-auto max-h-[500px]">
-          <pre className="text-neutral-300 leading-relaxed">
+        {/* Script Viewer */}
+        <div className="bg-zinc-950 rounded-lg border border-zinc-800 p-4 font-mono text-xs overflow-x-auto max-h-[500px]">
+          <pre className="text-zinc-300 leading-relaxed">
             {PYTHON_SCRIPT_CONTENT}
           </pre>
         </div>

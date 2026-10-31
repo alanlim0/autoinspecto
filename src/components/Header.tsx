@@ -1,9 +1,9 @@
 import React from 'react';
-import { Play, Sparkles } from 'lucide-react';
+import { Car, Play, Code2 } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'pipeline' | 'graph' | 'nosana' | 'daytona' | 'code';
-  onSelectTab: (tab: 'pipeline' | 'graph' | 'nosana' | 'daytona' | 'code') => void;
+  activeTab: 'inspection' | 'code';
+  onSelectTab: (tab: 'inspection' | 'code') => void;
   isRunning: boolean;
   onTriggerRun: () => void;
 }
@@ -15,61 +15,52 @@ export const Header: React.FC<HeaderProps> = ({
   onTriggerRun,
 }) => {
   return (
-    <header className="sticky top-0 z-40 flex items-center justify-between gap-8 px-6 py-3.5 border-b border-neutral-800 bg-neutral-950/90 backdrop-blur-md">
-      {/* Zone 1: Single text element wordmark */}
-      <a
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          onSelectTab('pipeline');
-        }}
-        className="flex items-center gap-2.5 text-base font-bold tracking-tight text-neutral-100 whitespace-nowrap shrink-0 hover:text-white transition-colors"
-      >
-        <span className="w-2.5 h-2.5 bg-cyan-400 rounded-sm inline-block" />
-        <span>AutoInspect Agent</span>
-      </a>
+    <header className="sticky top-0 z-40 flex items-center justify-between gap-6 px-6 py-4 border-b border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md">
+      {/* Zone 1: Brand title */}
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 flex items-center justify-center font-bold text-sm shadow-sm">
+          <Car className="w-4 h-4" />
+        </div>
+        <div>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              onSelectTab('inspection');
+            }}
+            className="text-base font-bold tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+          >
+            AutoInspect
+          </a>
+          <span className="hidden sm:inline-block ml-2 text-xs text-zinc-400 dark:text-zinc-400">
+            Car Return Assistant
+          </span>
+        </div>
+      </div>
 
-      {/* Zone 2: 4-5 concise single-line text links */}
-      <nav className="hidden md:flex items-center gap-7 text-xs font-medium text-neutral-400">
+      {/* Zone 2: Just 2 simple tabs for non-technical & technical users */}
+      <nav className="flex items-center gap-2 p-1 bg-zinc-100 dark:bg-zinc-900 rounded-lg border border-zinc-200/60 dark:border-zinc-800">
         <button
-          onClick={() => onSelectTab('pipeline')}
-          className={`hover:text-neutral-100 transition-colors whitespace-nowrap shrink-0 py-1 ${
-            activeTab === 'pipeline' ? 'text-cyan-400 font-semibold border-b border-cyan-400' : ''
+          onClick={() => onSelectTab('inspection')}
+          className={`flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-all whitespace-nowrap ${
+            activeTab === 'inspection'
+              ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 shadow-sm'
+              : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
           }`}
         >
-          Live Pipeline
-        </button>
-        <button
-          onClick={() => onSelectTab('graph')}
-          className={`hover:text-neutral-100 transition-colors whitespace-nowrap shrink-0 py-1 ${
-            activeTab === 'graph' ? 'text-cyan-400 font-semibold border-b border-cyan-400' : ''
-          }`}
-        >
-          Neo4j BOM Graph
-        </button>
-        <button
-          onClick={() => onSelectTab('nosana')}
-          className={`hover:text-neutral-100 transition-colors whitespace-nowrap shrink-0 py-1 ${
-            activeTab === 'nosana' ? 'text-cyan-400 font-semibold border-b border-cyan-400' : ''
-          }`}
-        >
-          Nosana GPU Grid
-        </button>
-        <button
-          onClick={() => onSelectTab('daytona')}
-          className={`hover:text-neutral-100 transition-colors whitespace-nowrap shrink-0 py-1 ${
-            activeTab === 'daytona' ? 'text-cyan-400 font-semibold border-b border-cyan-400' : ''
-          }`}
-        >
-          Daytona Sandbox
+          <Car className="w-4 h-4" />
+          <span>Vehicle Check</span>
         </button>
         <button
           onClick={() => onSelectTab('code')}
-          className={`hover:text-neutral-100 transition-colors whitespace-nowrap shrink-0 py-1 ${
-            activeTab === 'code' ? 'text-cyan-400 font-semibold border-b border-cyan-400' : ''
+          className={`flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-all whitespace-nowrap ${
+            activeTab === 'code'
+              ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 shadow-sm'
+              : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
           }`}
         >
-          Python Script & Pitch
+          <Code2 className="w-4 h-4" />
+          <span>Code & Pitch</span>
         </button>
       </nav>
 
@@ -78,14 +69,14 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           onClick={onTriggerRun}
           disabled={isRunning}
-          className={`flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-md transition-all whitespace-nowrap shrink-0 ${
+          className={`flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold rounded-lg transition-all shadow-sm active:scale-95 whitespace-nowrap ${
             isRunning
-              ? 'bg-neutral-800 text-neutral-400 cursor-not-allowed'
-              : 'bg-cyan-500 hover:bg-cyan-400 text-neutral-950 shadow-sm shadow-cyan-500/20 active:translate-y-px'
+              ? 'bg-zinc-200 dark:bg-zinc-800 text-zinc-400 cursor-not-allowed'
+              : 'bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-950 font-bold'
           }`}
         >
-          <Play className={`w-3.5 h-3.5 fill-current ${isRunning ? 'animate-spin' : ''}`} />
-          <span>{isRunning ? 'Processing Loop...' : 'Trigger Inspection'}</span>
+          <Play className={`w-4 h-4 fill-current ${isRunning ? 'animate-spin' : ''}`} />
+          <span>{isRunning ? 'Inspecting...' : 'Check Car Now'}</span>
         </button>
       </div>
     </header>

@@ -15,7 +15,7 @@ export const VEHICLE_PRESETS: VehiclePreset[] = [
     targetComponent: 'Front Bumper Assembly',
     subsystem: 'Exterior Fascia & Radar Radome',
     confidence: 0.942,
-    imageSrc: '/src/assets/images/car_inspection_front_bumper_1793440063102.jpg',
+    imageSrc: '/images/car_front_bumper.jpg',
     bbox: { x: 38, y: 38, w: 26, h: 28 }, // percentage in visualizer
     bom: {
       partId: 'BOM-LUCID-8821-FB',
@@ -52,7 +52,7 @@ export const VEHICLE_PRESETS: VehiclePreset[] = [
     targetComponent: 'Rear Right Tire Assembly',
     subsystem: 'Running Gear & Chassis Suspension',
     confidence: 0.968,
-    imageSrc: '/src/assets/images/car_inspection_scanner_bay_1793440061129.jpg',
+    imageSrc: '/images/car_scanner_bay.jpg',
     bbox: { x: 58, y: 56, w: 16, h: 26 },
     bom: {
       partId: 'BOM-PIRELLI-PZERO-21R',
@@ -89,7 +89,7 @@ export const VEHICLE_PRESETS: VehiclePreset[] = [
     targetComponent: 'SmartZone Front Aperture',
     subsystem: 'Autonomous Sensing Suite & ADAS',
     confidence: 0.915,
-    imageSrc: '/src/assets/images/car_inspection_scanner_bay_1793440061129.jpg',
+    imageSrc: '/images/car_depot.jpg',
     bbox: { x: 42, y: 52, w: 14, h: 12 },
     bom: {
       partId: 'BOM-POLESTAR-SMARTZONE-03',
